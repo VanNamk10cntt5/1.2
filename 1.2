@@ -1,0 +1,36 @@
+class HonSo {
+    private:
+        int nguyen;
+        int tu;
+        int mau;
+    public:
+        void nhap();
+        void xuat();
+};
+
+Định nghĩa hàm nhap:
+
+void HonSo::nhap() {
+    cout << "Nhap phan nguyen: ";
+    cin >> nguyen;
+    cout << "Nhap tu so: ";
+    cin >> tu;
+    cout << "Nhap mau so: ";
+    cin >> mau;
+}
+
+Hàm xuat:
+
+void HonSo::xuat() {
+    cout << nguyen << " " << tu << "/" << mau;
+}
+
+
+
+int main() {
+    HonSo hs;
+    hs.nhap();
+    hs.xuat();
+    return 0;
+}
+
