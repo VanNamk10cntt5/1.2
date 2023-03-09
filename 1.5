@@ -1,0 +1,25 @@
+struct DonThuc {
+    float a;  // Hệ số của đơn thức
+    int n;    // Số mũ của biến x
+};
+
+// Hàm nhập đơn thức từ bàn phím
+void NhapDonThuc(DonThuc& dt) {
+    cout << "Nhap he so a: ";
+    cin >> dt.a;
+    cout << "Nhap so mu n: ";
+    cin >> dt.n;
+}
+
+// Hàm xuất đơn thức ra màn hình
+void XuatDonThuc(const DonThuc& dt) {
+    cout << dt.a << "x^" << dt.n;
+}
+
+
+int main() {
+    DonThuc dt;
+    NhapDonThuc(dt);
+    XuatDonThuc(dt);
+    return 0;
+}
