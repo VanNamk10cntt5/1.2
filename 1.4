@@ -1,0 +1,35 @@
+class Diem3D {
+    private:
+        float x;
+        float y;
+        float z;
+    public:
+        void nhap();
+        void xuat();
+};
+Định nghĩa hàm nhap
+
+
+void Diem3D::nhap() {
+    cout << "Nhap hoanh do: ";
+    cin >> x;
+    cout << "Nhap tung do: ";
+    cin >> y;
+    cout << "Nhap cao do: ";
+    cin >> z;
+}
+
+Hàm xuat:
+
+void Diem3D::xuat() {
+    cout << "(" << x << "," << y << "," << z << ")";
+}
+
+
+
+int main() {
+    Diem3D A;
+    A.nhap();
+    A.xuat();
+    return 0;
+}
