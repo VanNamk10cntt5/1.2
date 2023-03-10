@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    const int MAX_SIZE = 100;
+    int arr[MAX_SIZE];
+    int n = 0;
+
+    // nhập vào các phần tử của mảng, kết thúc khi nhập vào giá trị 0
+    cout << "Nhập vào các phần tử của mảng (kết thúc khi nhập vào giá trị 0):" << endl;
+    while (true) {
+        int x;
+        cin >> x;
+        if (x == 0) {
+            break;
+        }
+        arr[n++] = x;
+    }
+
+    // sắp xếp mảng tăng dần và in ra kết quả
+    bubbleSort(arr, n);
+    cout << "Mảng sau khi sắp xếp tăng dần là:" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
