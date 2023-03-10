@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+void selectionSort(int arr[], int n) {
+    int i, j, min_idx;
+    for (i = 0; i < n-1; i++) {
+        min_idx = i;
+        for (j = i+1; j < n; j++) {
+            if (arr[j] < arr[min_idx]) {
+                min_idx = j;
+            }
+        }
+        swap(arr[min_idx], arr[i]);
+    }
+}
+
+int main() {
+    int n = 0;
+    int arr[100];
+
+    // Nhập mảng và kết thúc khi nhập 0
+    do {
+        cout << "Nhap so nguyen (ket thuc khi nhap 0): ";
+        cin >> arr[n];
+        n++;
+    } while (arr[n-1] != 0 && n < 100);
+
+    // Sắp xếp mảng
+    selectionSort(arr, n-1);
+
+    // In ra mảng đã sắp xếp
+    cout << "Mang da sap xep la: ";
+    for (int i = 0; i < n-1; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
