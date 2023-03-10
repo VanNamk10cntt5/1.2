@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Nhap so luong phan tu cua mang: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Nhap cac phan tu cua mang: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Sắp xếp mảng giảm dần bằng thuật toán Selection Sort
+    for (int i = 0; i < n - 1; i++) {
+        int max_idx = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] > arr[max_idx]) {
+                max_idx = j;
+            }
+        }
+        if (max_idx != i) {
+            int temp = arr[i];
+            arr[i] = arr[max_idx];
+            arr[max_idx] = temp;
+        }
+    }
+
+    // In ra mảng đã được sắp xếp giảm dần
+    cout << "Mang da sap xep giam dan: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
