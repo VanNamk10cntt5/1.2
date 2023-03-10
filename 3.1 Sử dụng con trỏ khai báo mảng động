@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n = 0;
+    int *arr = new int[100];
+
+    // Nhập mảng và kết thúc khi nhập 0
+    do {
+        cout << "Nhap so nguyen (ket thuc khi nhap 0): ";
+        cin >> *(arr+n);
+        n++;
+    } while (*(arr+n-1) != 0 && n < 100);
+
+    // Sắp xếp mảng
+    insertionSort(arr, n-1);
+
+    // In ra mảng đã sắp xếp
+    cout << "Mang da sap xep la: ";
+    for (int i = 0; i < n-1; i++) {
+        cout << *(arr+i) << " ";
+    }
+    cout << endl;
+
+    delete[] arr; // Giải phóng bộ nhớ đã cấp phát
+    return 0;
+}
