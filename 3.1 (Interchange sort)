@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+void interchangeSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] > arr[j]) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    const int MAX_SIZE = 100;
+    int arr[MAX_SIZE];
+    int n = 0;
+
+    // nhập vào các phần tử của mảng, kết thúc khi nhập vào giá trị 0
+    cout << "Nhập vào các phần tử của mảng (kết thúc khi nhập vào giá trị 0):" << endl;
+    while (true) {
+        int x;
+        cin >> x;
+        if (x == 0) {
+            break;
+        }
+        arr[n++] = x;
+    }
+
+    // sắp xếp mảng tăng dần và in ra kết quả
+    interchangeSort(arr, n);
+    cout << "Mảng sau khi sắp xếp tăng dần là:" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
